@@ -55,6 +55,26 @@ let autoBenzina = autoList.filter((item) => item.alimentazione === "Benzina");
 let autoDiesel = autoList.filter((item) => item.alimentazione === "Diesel");
 let autoRimanenti = autoList.filter((item) => item.alimentazione !== "Diesel" && item.alimentazione !== "Benzina");
 
+autoBenzina.forEach((element) => {
+    let listaAutoBenzina = document.querySelector(".lista-auto-benzina");
+    let newLiElement = document.createElement("li");
+    newLiElement.textContent = JSON.stringify(element);
+    listaAutoBenzina.appendChild(newLiElement)
+})
+
+autoDiesel.forEach((element) => {
+    let listaAutoDiesel = document.querySelector(".lista-auto-diesel");
+    let newLiElement = document.createElement("li");
+    newLiElement.textContent = JSON.stringify(element);
+    listaAutoDiesel.appendChild(newLiElement)
+})
+
+autoRimanenti.forEach((element) => {
+    let listaAutoRimanenti = document.querySelector(".lista-auto-rimanenti");
+    let newLiElement = document.createElement("li");
+    newLiElement.textContent = JSON.stringify(element);
+    listaAutoRimanenti.appendChild(newLiElement)
+})
 
 console.log(autoBenzina);
 console.log(autoDiesel);
